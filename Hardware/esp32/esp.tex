@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\title{Thyristor Commutation Circuit Analysis}
+\author{}
+\date{}
+
+\begin{document}
+\thispagestyle{fancy}
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0pt} 
+
+\fancyhead[L]{
+        \includegraphics[width=8cm, height=1.7cm]{Screenshot from 2025-07-07 10-40-43.png} 
+        }
+\fancyhead[R]{
+    Name: G.MADHU LATHA \\
+    Batch: COMETFWC029\\
+    Date: 07-july 2025
+}
+\vspace{1cm}
+\begin{center}
+    {\LARGE \textbf{\textcolor{black}{\\  GATE QUESTION \\ ECE 2010 Q55}}}
+\end{center}
+\vspace{-1cm}
+\section*{\textcolor{cyan}{ \\Question :}}
+
+\noindent \textbf{Q55) The L-C circuit of Q54 is used to commutate a thyristor, which is initially carrying a current of $5\text{A}$ as shown in the figure below. The values and initial conditions of L and C are the same as in Q54. The switch is closed at $t = 0$. If the forward drop is negligible, the time taken for the device to turn off is}
+
+\vspace{0.5cm}
+
+\includegraphics[height=5cm,width=\linewidth]{Screenshot from 2025-07-07 10-28-36.png}
+
+\vspace{-3em}
+
+\begin{enumerate}
+    \item $52\mu\text{s}$
+    \item $156\mu\text{s}$
+    \item $312\mu\text{s}$
+    \item $26\mu\text{s}$
+\end{enumerate}
+
+\vspace{-0.5em}
+
+
+
+\textbf{Given from Q55 and Q54:}
+\begin{itemize}
+    \item Inductance, $L = 1\text{mH} = 1 \times 10^{-3}\text{ H}$ (from Q54)
+    \item Capacitance, $C = 10\mu\text{F} = 10 \times 10^{-6}\text{ F}$ (from Q54)
+    \item Initial Thyristor Current, $I_{\text{initial}} = 5\text{A}$
+    \item Source Voltage, $V_S = 100\text{V}$
+\end{itemize}
+\textbf{Calculation with Given Values:}
+1.  \textbf{Calculate the resonant angular frequency $\omega_0$:}
+    $$\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{(1 \times 10^{-3}\text{ H}) \times (10 \times 10^{-6}\text{ F})}}$$
+    $$\omega_0 = \frac{1}{\sqrt{10 \times 10^{-9}}} = \frac{1}{\sqrt{1 \times 10^{-8}}} = \frac{1}{1 \times 10^{-4}} = 10000 \text{ rad/s}$$
+
+2.  \textbf{Calculate the peak commutation current $I_{\text{peak\_commutation}}$:}
+    $$I_{\text{peak\_commutation}} = V_S \sqrt{\frac{C}{L}} = 100\text{ V} \sqrt{\frac{10 \times 10^{-6}\text{ F}}{1 \times 10^{-3}\text{ H}}}$$
+    $$I_{\text{peak\_commutation}} = 100 \sqrt{0.01} = 100 \times 0.1 = 10\text{ A}$$
+
+3.  \textbf{Calculate the time $t$ to turn off:}
+    $$t = \frac{1}{\omega_0} \arcsin\left(\frac{I_{\text{initial}}}{I_{\text{peak\_commutation}}}\right)$$
+    $$t = \frac{1}{10000\text{ rad/s}} \arcsin\left(\frac{5\text{ A}}{10\text{ A}}\right)$$
+    $$t = \frac{1}{10000} \arcsin(0.5)$$
+    We know that $\arcsin(0.5) = \frac{\pi}{6}$ radians.
+    $$t = \frac{1}{10000} \times \frac{\pi}{6}$$
+    $$t = \frac{\pi}{60000}\text{ s}$$
+    To express this in microseconds:
+    $$t \approx \frac{3.14159265}{60000}\text{ s} \approx 5.23598 \times 10^{-5}\text{ s}$$
+    $$t \approx 52.36\mu\text{s}$$
+
+\textbf{Final Answer:}
+
+The calculated turn-off time is approximately $52.36\mu\text{s}$, which corresponds to option (A) $52\mu\text{s}$.
+
+\end{document}

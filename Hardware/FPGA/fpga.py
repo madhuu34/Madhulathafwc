@@ -1,0 +1,10 @@
+print("Question 57:")
+print("The question below consists of a pair of related words followed by four pairs of")
+print("words. Select the pair that best expresses the relation in the original pair.\n")
+print("Unemployed: Worker\n")
+print("(A) fallow: land")
+print("(B) unaware: sleeper")
+print("(C) wit: jester")
+print("(D) renovated: house\n")
+print("The correct answer is (A)")
+
