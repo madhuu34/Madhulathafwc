@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{url}
+
+\setlength{\columnsep}{1cm}
+
+\definecolor{codegray}{gray}{0.95}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    columns=fullflexible,
+    frame=single,
+    breaklines=true,
+    showstringspaces=false
+}
+
+\begin{document}
+
+% Title Block
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{WhatsApp Image 2025-07-08 at 3.59.18 PM.jpeg} % Replace with image of circuit setup
+    \end{minipage}
+\hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Name: Madhu Latha G} \\
+        \textbf{ID: cometfwc029} \\
+        \textbf{Date: 9th July 2025}
+    \end{minipage}
+\end{figure}
+
+\begin{center}
+    {\LARGE \textbf{\textcolor{cyan}{GATE Question Paper 2010, EE Question Number 55}}}
+\end{center}
+\vspace{1em}
+
+% Abstract
+\noindent\textbf{Abstract} \\[0.5em]
+\includegraphics[width=0.99\linewidth]{55.png} \\[0.3em]
+\textit{(GATE 2010, Question No. 55 – Thyristor Commutation using LC Circuit simulated on Arduino)} \\
+
+\vspace{1em}
+\noindent\textbf{1. Components Used}
+\begin{table}[H]
+\small
+\centering
+\begin{tabular}{|p{4.2cm}|c|}
+\hline
+\textbf{Component} & \textbf{Qty} \\
+\hline
+Arduino UNO & 1 \\
+Breadboard & 1 \\
+LED & 1 \\
+220$\Omega$ Resistor & 1 \\
+Jumper Wires & 5 \\
+USB Cable (Type B) & 1 \\
+Computer with Arduino IDE & 1 \\
+\hline
+\end{tabular}
+\caption*{Table 1: List of components used}
+\end{table}
+
+\vspace{1em}
+\noindent\textbf{2. Setup and Connections}
+\begin{enumerate}
+    \item Connect digital pin 9 to a 220$\Omega$ resistor.
+    \item Connect resistor to LED anode; LED cathode to GND.
+    \item Connect Arduino UNO to PC via USB.
+    \item Upload sketch using Arduino IDE.
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textbf{3. Simulation Logic}
+\begin{itemize}
+    \item The LC circuit causes the current through a thyristor to follow $i(t) = 5\cos(5000t)$.
+    \item At $i(t) = 0$, the thyristor turns OFF ($t \approx 314\,\mu s$).
+    \item We simulate this behavior with a cosine fading LED using PWM output.
+\end{itemize}
+
+\vspace{1em}
+\noindent\textbf{5. Observations and Output}
+\begin{itemize}
+    \item LED starts at full brightness (5A equivalent).
+    \item Brightness fades smoothly to OFF in 314\,$\mu$s.
+    \item Simulates the current reversal and turn-off of the thyristor.
+\end{itemize}
+
+\vspace{1em}
+\noindent\textbf{6. Result}
+The Arduino successfully simulates the LC commutation waveform. The LED visually represents thyristor current from 5 A to 0 A, confirming the correct turn-off time ($314\,\mu$s).
+
+\vspace{1em}
+\noindent\textbf{7. Source Code Repository} \\
+\url{https://github.com/madhuu34/Madhulathafwc/blob/main/Hardware/esp32/hardware_code.py}
+
+\end{document}
+
